@@ -1,0 +1,29 @@
+@import './base';
+@import './mixins';
+@import './presets';
+@import './responsive';
+@import './typography';
+
+:root {
+    @include responsive(phone) {
+        --nav-height: 60px;
+        --job-details-banner-height: 290px;
+    }
+
+    --white-color: #ffffff;
+    --black-color: #000000;
+}
+
+// make the scrollbar transparent
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+
+    &-thumb {
+        background: transparent;
+    }
+
+    &-track {
+        background: transparent;
+    }
+}
