@@ -1,19 +1,19 @@
 import { classNames } from "@/utils/functions";
 import styles from "@/styles/Home.module.scss";
 import Image from "next/image";
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Input from "@/components/Input/Input";
 import Dropdown from "@/components/Dropdown/Dropdown";
+import Banner from "@/components/Banner/Banner";
 import Button from "@/components/Button/Button";
 import favicon from "@/public/vectors/favicon.svg";
 import eye from "@/public/icons/eye.svg";
 import eyeBlocked from "@/public/icons/eye-blocked.svg";
 import arrowRight from "@/public/icons/arrow-right-outline.svg";
+import bannerImage from "@/public/vectors/banner-image.svg";
 
 const HomePage = () => {
-	const router = useRouter();
 	const options = [
 		"heads.design",
 		"gmail.com",
@@ -43,7 +43,13 @@ const HomePage = () => {
 
 	return (
 		<main className={classNames(styles, "home")}>
-			<section className={classNames(styles, "frame")}>
+			<section
+				className={classNames(styles, "frame")}
+				style={{
+					justifyContent: stage === 3 ? "center" : "space-between",
+					padding: stage === 3 ? "0" : "0 0 0 7.5%",
+				}}
+			>
 				<button
 					className={classNames(styles, "frame-favicon")}
 					onClick={() => setStage(() => 1)}
@@ -295,6 +301,19 @@ const HomePage = () => {
 								Resend OTP
 							</span>
 						</div>
+					</div>
+				) : null}
+				{stage === 1 || stage === 2 ? (
+					<div className={classNames(styles, "banner-frame")}>
+						<Banner
+							image={bannerImage}
+							title="Developer handoff improvements"
+							description="You'll now see a highlight around Symbols on the Canvas and in the Inspector."
+							tabs={{
+								total: 4,
+								active: 0,
+							}}
+						/>
 					</div>
 				) : null}
 				<span className={classNames(styles, "frame-signup")}>

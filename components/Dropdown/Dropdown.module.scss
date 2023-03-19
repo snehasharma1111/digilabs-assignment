@@ -3,6 +3,7 @@
 .dropdown {
     width: fit-content;
     position: relative;
+    z-index: 10;
 
     &-input {
         border-radius: 12px;
