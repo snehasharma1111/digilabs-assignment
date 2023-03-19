@@ -1,0 +1,73 @@
+@import '@/styles/config/mixins';
+
+.btn {
+    all: unset;
+    box-sizing: border-box;
+    width: fit-content;
+    min-width: 150px;
+    margin: 4px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    user-select: none;
+    @include font('Intern', 16px, 700, 150%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    transition: all 0.3s linear;
+
+    &-fill {
+        background-color: var(--primary-color);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--primary-color-700);
+        }
+    }
+
+    &-outline {
+        background-color: rgba(0, 85, 255, 0.1);
+        color: var(--primary-color-700);
+
+        &:hover {
+            background-color: rgba(0, 85, 255, 0.2);
+        }
+    }
+
+    &-dark {
+        background-color: #18181B;
+        color: #fff;
+    }
+
+    &-icon {
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: all 0.2s ease-in-out;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover:not(&:disabled) &-icon {
+        width: fit-content;
+        opacity: 1;
+        visibility: visible;
+
+        &-left {
+            margin-right: 9px;
+        }
+
+        &-right {
+            margin-left: 9px;
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        background-color: #CACACE;
+        color: #F2F2F3;
+    }
+}
