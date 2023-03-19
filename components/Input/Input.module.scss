@@ -1,0 +1,43 @@
+@import '@/styles/config/mixins';
+
+.input {
+    all: unset;
+    box-sizing: border-box;
+    cursor: text;
+    border-radius: 12px;
+    padding: 16px 20px;
+    @include font('Inter', 16px, 500, 150%);
+    color: #18181B;
+    transition: all 0.3s ease-in-out;
+
+    &-group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-flow: column;
+        margin: 16px;
+    }
+
+    &::placeholder {
+        color: #7A7A85;
+    }
+
+    &:active:not(&:disabled),
+    &:focus:not(&:disabled) {
+        box-shadow: 0px 0px 0px 4px rgba(0, 85, 255, 0.2);
+    }
+
+    &-label {
+        margin-bottom: 8px;
+    }
+
+    &:not(&:disabled) {
+        border: 1px solid #0858F7;
+    }
+
+    &:disabled {
+        background: rgba(24, 24, 27, 0.05);
+        user-select: none;
+        cursor: not-allowed;
+    }
+}

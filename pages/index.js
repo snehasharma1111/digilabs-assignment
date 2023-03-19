@@ -2,6 +2,7 @@ import Button from "@/components/Button/Button";
 import Image from "next/image";
 import arrowRightOutline from "@/public/vectors/arrow-right-outline.svg";
 import arrowRightFill from "@/public/vectors/arrow-right-fill.svg";
+import Input from "@/components/Input/Input";
 
 const HomePage = () => {
 	return (
@@ -27,6 +28,13 @@ const HomePage = () => {
 				variant="dark"
 				disabled
 			/>
+			<Input placeholder="Enter Full Name" label="Name" />
+			<Input
+				placeholder="Enter Full Name"
+				label="Name"
+				value="Sneha Sharma"
+			/>
+			<Input placeholder="Enter Full Name" label="Name" disabled />
 		</main>
 	);
 };
