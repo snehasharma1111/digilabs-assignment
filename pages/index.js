@@ -56,7 +56,7 @@ const HomePage = () => {
 									stage === 3 || window.innerWidth < 992
 										? "0"
 										: "0 0 0 7.5%",
-						  }
+						}
 						: {}
 				}
 			>
@@ -111,10 +111,10 @@ const HomePage = () => {
 										? {
 												minWidth: "min(95%, 400px)",
 												maxWidth: "100%",
-										  }
+										}
 										: {
 												minWidth: "400px",
-										  }
+										}
 								}
 								name="email"
 								value={loginDetails.email}
@@ -145,10 +145,10 @@ const HomePage = () => {
 										? {
 												minWidth: "min(95%, 400px)",
 												maxWidth: "100%",
-										  }
+										}
 										: {
 												minWidth: "400px",
-										  }
+										}
 								}
 								name="password"
 								type={loginDetails.passwordInputType}
