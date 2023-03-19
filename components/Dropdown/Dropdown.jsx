@@ -4,10 +4,10 @@ import Image from "next/image";
 import { useState } from "react";
 import styles from "./Dropdown.module.scss";
 
-const Dropdown = ({ options, dropdownValue, setDropdownValue }) => {
+const Dropdown = ({ options, dropdownValue, setDropdownValue, style }) => {
 	const [showMenu, setShowMenu] = useState(false);
 	return (
-		<div className={classNames(styles, "dropdown")}>
+		<div className={classNames(styles, "dropdown")} style={style}>
 			<div
 				className={classNames(styles, "dropdown-input")}
 				onClick={() => setShowMenu((p) => !p)}
@@ -37,7 +37,10 @@ const Dropdown = ({ options, dropdownValue, setDropdownValue }) => {
 								"dropdown-menu-option"
 							)}
 							key={option.id + " " + index}
-							onClick={() => setDropdownValue(option.id)}
+							onClick={() => {
+								setDropdownValue(option.id);
+								setShowMenu(false);
+							}}
 						>
 							{option.text}
 						</div>

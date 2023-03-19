@@ -1,0 +1,71 @@
+@import '@/styles/config/mixins';
+
+.home {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F2F2F3;
+
+    .frame {
+        width: 95%;
+        height: 95%;
+        margin: auto;
+        border-radius: 32px;
+        background-color: #fff;
+        position: relative;
+        box-shadow: var(--shadow-elevation-2dp);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &-favicon {
+            all: unset;
+            box-sizing: border-box;
+            position: absolute;
+            top: 32px;
+            left: 32px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        &-signup {
+            position: absolute;
+            left: 32px;
+            bottom: 24px;
+            text-decoration: none;
+            font: inherit;
+
+            a {
+                color: var(--primary-color);
+            }
+        }
+    }
+
+    .content {
+        width: 400px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-flow: column;
+
+        &-heading {
+            margin-bottom: 40px;
+        }
+
+        &-form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            gap: 16px;
+
+            &-forget {
+                color: var(--primary-color);
+                cursor: pointer;
+                font-weight: 700;
+            }
+        }
+    }
+}

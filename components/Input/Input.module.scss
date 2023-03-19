@@ -4,18 +4,22 @@
     all: unset;
     box-sizing: border-box;
     cursor: text;
+    width: 100%;
     border-radius: 12px;
     padding: 16px 20px;
     @include font(Inter, 16px, 500, 150%);
     color: #18181B;
     transition: all 0.3s ease-in-out;
+    border: 1px solid transparent;
+    position: relative;
 
     &-group {
+        width: fit-content;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-flow: column;
-        margin: 16px;
+        position: relative;
     }
 
     &::placeholder {
@@ -24,6 +28,7 @@
 
     &:active:not(&:disabled),
     &:focus:not(&:disabled) {
+        border: 1px solid #0858F7;
         box-shadow: 0px 0px 0px 4px rgba(0, 85, 255, 0.2);
     }
 
@@ -32,7 +37,7 @@
     }
 
     &:not(&:disabled) {
-        border: 1px solid #0858F7;
+        border-color: rgba(0, 0, 0, 0.15);
     }
 
     &:disabled {

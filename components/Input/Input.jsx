@@ -1,9 +1,9 @@
 import { classNames } from "@/utils/functions";
 import styles from "./Input.module.scss";
 
-const Input = ({ label, className, ...rest }) => {
+const Input = ({ label, className, children, boxStyle, ...rest }) => {
 	return (
-		<div className={classNames(styles, "input-group")}>
+		<div className={classNames(styles, "input-group")} style={boxStyle}>
 			{label ? (
 				<label className={classNames(styles, "input-label")}>
 					{label}
@@ -13,6 +13,7 @@ const Input = ({ label, className, ...rest }) => {
 				{...rest}
 				className={classNames(styles, "input", className)}
 			></input>
+			{children}
 		</div>
 	);
 };
