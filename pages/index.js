@@ -1,8 +1,10 @@
 import Button from "@/components/Button/Button";
 import Image from "next/image";
-import arrowRightOutline from "@/public/vectors/arrow-right-outline.svg";
-import arrowRightFill from "@/public/vectors/arrow-right-fill.svg";
+import arrowRightOutline from "@/public/icons/arrow-right-outline.svg";
+import arrowRightFill from "@/public/icons/arrow-right-fill.svg";
+import bannerImage from "@/public/vectors/banner-image.svg";
 import Input from "@/components/Input/Input";
+import Banner from "@/components/Banner/Banner";
 
 const HomePage = () => {
 	return (
@@ -35,6 +37,15 @@ const HomePage = () => {
 				value="Sneha Sharma"
 			/>
 			<Input placeholder="Enter Full Name" label="Name" disabled />
+			<Banner
+				image={bannerImage}
+				title="Developer handoff improvements"
+				description="You'll now see a highlight around Symbols on the Canvas and in the Inspector."
+				tabs={{
+					total: 4,
+					active: 0,
+				}}
+			/>
 		</main>
 	);
 };

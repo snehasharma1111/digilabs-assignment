@@ -1,24 +1,18 @@
+import { classNames } from "@/utils/functions";
 import styles from "./Input.module.scss";
-
-const classNames = (...args) => {
-	const classes = [];
-	args.forEach((arg) => {
-		if (typeof arg === "string") classes.push(styles[arg]);
-		else if (typeof arg === "object")
-			Object.keys(arg).forEach((key) => {
-				if (arg[key]) classes.push(styles[key]);
-			});
-	});
-	return classes.join(" ");
-};
 
 const Input = ({ label, className, ...rest }) => {
 	return (
-		<div className={classNames("input-group")}>
+		<div className={classNames(styles, "input-group")}>
 			{label ? (
-				<label className={classNames("input-label")}>{label}</label>
+				<label className={classNames(styles, "input-label")}>
+					{label}
+				</label>
 			) : null}
-			<input {...rest} className={classNames("input", className)}></input>
+			<input
+				{...rest}
+				className={classNames(styles, "input", className)}
+			></input>
 		</div>
 	);
 };
