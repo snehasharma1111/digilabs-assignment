@@ -45,16 +45,28 @@ const HomePage = () => {
 		<main className={classNames(styles, "home")}>
 			<section
 				className={classNames(styles, "frame")}
-				style={{
-					justifyContent: stage === 3 ? "center" : "space-between",
-					padding: stage === 3 ? "0" : "0 0 0 7.5%",
-				}}
+				style={
+					typeof window !== "undefined"
+						? {
+								justifyContent:
+									stage === 3 || window.innerWidth < 992
+										? "center"
+										: "space-between",
+								padding:
+									stage === 3 || window.innerWidth < 992
+										? "0"
+										: "0 0 0 7.5%",
+						  }
+						: {}
+				}
 			>
 				<button
 					className={classNames(styles, "frame-favicon")}
 					onClick={() => setStage(() => 1)}
 					style={{
 						position: stage === 3 ? "relative" : "absolute",
+						top: stage === 3 ? "unset" : "32px",
+						left: stage === 3 ? "unset" : "32px",
 					}}
 				>
 					<Image src={favicon} alt="favicon" />
@@ -93,9 +105,17 @@ const HomePage = () => {
 						>
 							<Input
 								placeholder="Email Address"
-								boxStyle={{
-									minWidth: "400px",
-								}}
+								boxStyle={
+									typeof window !== "undefined" &&
+									window.innerWidth < 768
+										? {
+												minWidth: "min(95%, 400px)",
+												maxWidth: "100%",
+										  }
+										: {
+												minWidth: "400px",
+										  }
+								}
 								name="email"
 								value={loginDetails.email}
 								onChange={(e) =>
@@ -119,9 +139,17 @@ const HomePage = () => {
 							</Input>
 							<Input
 								placeholder="Password"
-								boxStyle={{
-									minWidth: "400px",
-								}}
+								boxStyle={
+									typeof window !== "undefined" &&
+									window.innerWidth < 768
+										? {
+												minWidth: "min(95%, 400px)",
+												maxWidth: "100%",
+										  }
+										: {
+												minWidth: "400px",
+										  }
+								}
 								name="password"
 								type={loginDetails.passwordInputType}
 								value={loginDetails.password}

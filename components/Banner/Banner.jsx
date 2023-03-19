@@ -35,7 +35,21 @@ const Banner = ({ image, title, description, tabs, style }) => {
 								))}
 						</div>
 					) : null}
-					<button className={classNames(styles, "banner-share")}>
+					<button
+						className={classNames(styles, "banner-share")}
+						onClick={(e) => {
+							e.preventDefault();
+							if (navigator.share) {
+								navigator
+									.share({
+										title: "DigiLabs Assignment",
+										url: "https://sneha-digilabs-assignment.vercel.app/",
+									})
+									?.then((res) => console.log(res))
+									?.catch((err) => console.error(err));
+							}
+						}}
+					>
 						Share
 					</button>
 				</div>

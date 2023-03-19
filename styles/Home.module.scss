@@ -21,6 +21,11 @@
         align-items: center;
         padding: 0 0 0 7.5%;
 
+        @include responsive(tablet) {
+            justify-content: center;
+            padding: 0;
+        }
+
         &-favicon {
             all: unset;
             box-sizing: border-box;
@@ -51,6 +56,7 @@
 
     .content {
         width: 400px;
+        max-width: 95%;
         display: flex;
         justify-content: center;
         align-items: flex-start;
@@ -81,6 +87,14 @@
             gap: 16px;
             position: relative;
 
+            @include responsive(phone) {
+                width: 100%;
+
+                &>div {
+                    width: 100%;
+                }
+            }
+
 
             &-forget {
                 color: var(--primary-color);
@@ -109,5 +123,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @include responsive(tablet) {
+            display: none;
+        }
     }
 }
