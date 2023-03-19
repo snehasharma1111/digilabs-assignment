@@ -6,7 +6,7 @@
     cursor: text;
     border-radius: 12px;
     padding: 16px 20px;
-    @include font('Inter', 16px, 500, 150%);
+    @include font(Inter, 16px, 500, 150%);
     color: #18181B;
     transition: all 0.3s ease-in-out;
 

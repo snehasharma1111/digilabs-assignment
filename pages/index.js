@@ -5,8 +5,25 @@ import arrowRightFill from "@/public/icons/arrow-right-fill.svg";
 import bannerImage from "@/public/vectors/banner-image.svg";
 import Input from "@/components/Input/Input";
 import Banner from "@/components/Banner/Banner";
+import Dropdown from "@/components/Dropdown/Dropdown";
+import { useState } from "react";
 
 const HomePage = () => {
+	const options = [
+		{
+			text: "@heads.design",
+			id: "heads.design",
+		},
+		{
+			text: "@gmail.com",
+			id: "gmail.com",
+		},
+		{
+			text: "@yahoo.com",
+			id: "yahoo.com",
+		},
+	];
+	const [dropdownValue, setDropdownValue] = useState(options[0].id);
 	return (
 		<main>
 			<Button
@@ -29,6 +46,11 @@ const HomePage = () => {
 				icon={<Image src={arrowRightOutline} alt="arrow right" />}
 				variant="dark"
 				disabled
+			/>
+			<Dropdown
+				options={options}
+				dropdownValue={dropdownValue}
+				setDropdownValue={setDropdownValue}
 			/>
 			<Input placeholder="Enter Full Name" label="Name" />
 			<Input

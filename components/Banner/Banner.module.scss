@@ -36,7 +36,7 @@
         align-items: flex-start;
         flex-flow: column;
         color: #fff;
-        @include font('Inter');
+        @include font(Inter);
     }
 
     &-new {
@@ -51,11 +51,11 @@
     }
 
     &-title {
-        @include font('Inter', 28px, 700, 125%);
+        @include font(Inter, 28px, 700, 125%);
     }
 
     &-description {
-        @include font('Inter', 16px, 500, 150%);
+        @include font(Inter, 16px, 500, 150%);
         margin: 16px 0;
     }
 
